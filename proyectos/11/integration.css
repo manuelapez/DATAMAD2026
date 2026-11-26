@@ -1,0 +1,140 @@
+/* Copyright (c) 2026 Manuela Ibáñez. MIT applies to original CRABI software; see LICENSE_SCOPE.md. */
+.crabi-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(235px, 0.9fr);
+  align-items: center;
+  gap: 16px 22px;
+  min-height: 76px;
+}
+
+.crabi-header .brand {
+  grid-column: 1;
+  min-width: 0;
+}
+
+.guide-cta {
+  grid-column: 2;
+  justify-self: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 9px 15px;
+  border: 1px solid var(--burgundy, #713f4b);
+  border-radius: 2px;
+  background: var(--surface, #fff);
+  color: var(--burgundy, #713f4b);
+  font-family: var(--font-interface, Arial, sans-serif);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.guide-cta:hover {
+  background: var(--surface-secondary, #f2f4f4);
+  color: var(--burgundy, #713f4b);
+  text-decoration: none;
+}
+
+.guide-cta:focus-visible {
+  outline: 2px solid var(--burgundy, #713f4b);
+  outline-offset: 3px;
+}
+
+.crabi-header-note {
+  grid-column: 3;
+  justify-self: end;
+  max-width: 340px;
+  color: var(--muted, #555b60);
+  font-family: var(--font-interface, Arial, sans-serif);
+  font-size: 12px;
+  line-height: 1.45;
+  text-align: right;
+}
+
+.crabi-header-note strong {
+  display: block;
+  color: var(--ink, #202124);
+  font-size: 12.5px;
+  font-weight: 500;
+}
+
+.crabi-audience-note {
+  margin: 0;
+  padding: 9px clamp(16px, 4vw, 56px);
+  border-bottom: 1px solid var(--line, #d9dddf);
+  background: var(--surface-secondary, #f2f4f4);
+  color: var(--muted, #555b60);
+  font-family: var(--font-interface, Arial, sans-serif);
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (max-width: 950px) {
+  .crabi-header {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px 16px;
+    min-height: 0;
+  }
+
+  .crabi-header .brand {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .guide-cta {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .crabi-header-note {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: stretch;
+    max-width: none;
+    text-align: left;
+  }
+}
+
+@media (max-width: 620px) {
+  .crabi-header {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: start;
+    gap: 10px;
+    padding-top: 13px;
+    padding-bottom: 14px;
+  }
+
+  .crabi-header .brand,
+  .guide-cta,
+  .crabi-header-note {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .guide-cta {
+    justify-self: start;
+    min-height: 44px;
+    font-size: 14px;
+  }
+
+  .crabi-header-note {
+    font-size: 12.5px;
+  }
+
+  .crabi-audience-note {
+    padding-right: 16px;
+    padding-left: 16px;
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .guide-cta {
+    transition: none;
+  }
+}

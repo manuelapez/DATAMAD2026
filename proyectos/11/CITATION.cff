@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "Si utilizas o citas esta candidata de CRABI, cita a la autora y especifica la versión."
+title: "CRABI — Laboratorio de simulación epidemiológica"
+version: "0.4.0-candidate"
+date-released: 2026-11-26
+authors:
+  - family-names: "Ibáñez"
+    given-names: "Manuela"
+repository-code: "https://github.com/manuelapez/CRABI"
+keywords:
+  - demografía
+  - simulación
+  - cribado
+  - contrafactual
+  - aprendizaje automático
+abstract: >-
+  Prototipo exploratorio con escenarios demográficos, territoriales,
+  contrafactuales y un surrogate de aprendizaje automático entrenado con
+  simulaciones sintéticas. No es una herramienta clínica.
+
+

@@ -1,0 +1,83 @@
+/* Copyright (c) 2026 Manuela Ibáñez. MIT applies to original CRABI software; see LICENSE_SCOPE.md. */
+html.crabi-motion-ready [data-crabi-reveal]:not(.crabi-revealed) {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 340ms ease-out, transform 340ms ease-out;
+}
+
+html.crabi-motion-ready [data-crabi-reveal].crabi-revealed {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 340ms ease-out, transform 340ms ease-out;
+}
+
+.crabi-panel-enter {
+  animation: crabi-panel-enter 260ms ease-out both;
+}
+
+.crabi-value-updated {
+  animation: crabi-value-updated 420ms ease-out both;
+}
+
+.crabi-copy-updated {
+  animation: crabi-copy-updated 360ms ease-out both;
+}
+
+.crabi-chart-updated {
+  animation: crabi-chart-updated 360ms ease-out both;
+}
+
+.crabi-row-updated {
+  animation: crabi-row-updated 440ms ease-out both;
+}
+
+.crabi-bar-transition {
+  transform-origin: left center;
+  transition: transform 420ms cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+.crabi-line-draw {
+  transition: stroke-dashoffset 420ms cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+@keyframes crabi-panel-enter {
+  from { opacity: 0.72; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes crabi-value-updated {
+  0% { color: var(--burgundy, #713f4b); opacity: 0.62; }
+  100% { color: inherit; opacity: 1; }
+}
+
+@keyframes crabi-copy-updated {
+  0% { opacity: 0.64; }
+  100% { opacity: 1; }
+}
+
+@keyframes crabi-chart-updated {
+  0% { opacity: 0.72; }
+  100% { opacity: 1; }
+}
+
+@keyframes crabi-row-updated {
+  0% { background-color: rgba(120, 147, 141, 0.16); }
+  100% { background-color: transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.crabi-motion-ready [data-crabi-reveal],
+  html.crabi-motion-ready [data-crabi-reveal]:not(.crabi-revealed),
+  .crabi-panel-enter,
+  .crabi-value-updated,
+  .crabi-copy-updated,
+  .crabi-chart-updated,
+  .crabi-row-updated,
+  .crabi-bar-transition,
+  .crabi-line-draw {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
